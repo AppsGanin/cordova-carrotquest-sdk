@@ -1,4 +1,3 @@
-import Cordova
 import CarrotSDK
 
 @objc(CordovaCarrotquestSDK)

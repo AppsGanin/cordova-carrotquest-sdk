@@ -5,12 +5,12 @@
   "cordova": {
     "id": "cordova-carrotquest-sdk",
     "platforms": [
-      "android"
+      "android",
+      "ios"
     ]
   },
   "keywords": [
     "ecosystem:cordova",
-    "cordova-android"
   ],
   "author": "",
   "license": "ISC"
