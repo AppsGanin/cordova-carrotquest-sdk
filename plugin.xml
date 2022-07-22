@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="cordova-carrotquest-sdk" version="1.0.0" xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>CordovaCarrotquestSDK</name>
+    <js-module name="CordovaCarrotquestSDK" src="www/CordovaCarrotquestSDK.js">
+        <clobbers target="CordovaCarrotquestSDK"/>
+        <clobbers target="cordova.plugins.CordovaCarrotquestSDK"/>
+    </js-module>
+    <platform name="android">
+        <config-file target="config.xml" parent="/*">
+            <feature name="CordovaCarrotquestSDK">
+                <param name="android-package" value="cordova.carrotquestSDK.CordovaCarrotquestSDK"/>
+                <param name="onload" value="true"/>
+            </feature>
+        </config-file>
+        <framework custom="true" src="src/android/build.gradle" type="gradleReference"/>
+        <config-file parent="/*" target="AndroidManifest.xml"/>
+        <source-file src="src/android/CordovaCarrotquestSDK.java" target-dir="src/cordova/carrotquestSDK/"/>
+    </platform>
+    <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="CordovaCarrotquestSDK">
+                <param name="ios-package" value="CordovaCarrotquestSDK"/>
+                <param name="onload" value="true"/>
+            </feature>
+        </config-file>
+        <framework src="UserNotifications.framework" />
+        <source-file src="src/ios/CordovaCarrotquestSDK.swift"/>
+        <podspec>
+            <config>
+                <source url="https://cdn.cocoapods.org/"/>
+            </config>
+            <pods use-frameworks="true">
+                <pod name="CarrotquestSDK" spec="2.6.4"/>
+            </pods>
+        </podspec>
+
+    </platform>
+</plugin>
