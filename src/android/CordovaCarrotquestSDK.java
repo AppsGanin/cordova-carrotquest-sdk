@@ -43,7 +43,7 @@ public class CordovaCarrotquestSDK extends CordovaPlugin {
       String appId = args.getString(1);
       boolean debug = args.getBoolean(2);
       Carrot.setDebug(debug);
-      this.init(apiKey, appId, callbackContext);
+      this.setup(apiKey, appId, callbackContext);
       return true;
     }
     if (action.equals("deInit")) {
