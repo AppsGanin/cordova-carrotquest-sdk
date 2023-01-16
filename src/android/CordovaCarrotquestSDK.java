@@ -106,8 +106,25 @@ public class CordovaCarrotquestSDK extends CordovaPlugin {
 
   private void deInit(CallbackContext callbackContext) {
     try {
-      Carrot.deInit();
-      callbackContext.success();
+      Callback<Boolean> cb = new Callback<Boolean>() {
+        @Override
+        public void onResponse(Boolean aBoolean) {
+          callbackContext.success();
+        }
+
+        @Override
+        public void onFailure(Throwable throwable) {
+          callbackContext.error(throwable.getMessage());
+        }
+      };
+      Handler mainHandler = new Handler(Looper.getMainLooper());
+      Runnable myRunnable = new Runnable() {
+        @Override
+        public void run() {
+          Carrot.deInit(cb);
+        }
+      };
+      mainHandler.post(myRunnable);
     } catch (Exception e) {
       callbackContext.error(e.getMessage());
     }
