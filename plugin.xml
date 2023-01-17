@@ -31,7 +31,7 @@
                 <source url="https://cdn.cocoapods.org/"/>
             </config>
             <pods use-frameworks="true">
-                <pod name="CarrotquestSDK" spec="2.6.4"/>
+                <pod name="CarrotquestSDK" spec="2.8.0"/>
             </pods>
         </podspec>
 
