@@ -134,9 +134,9 @@ public class CordovaCarrotquestSDK extends CordovaPlugin {
 
   private void auth(String userId, String userAuthKey, CallbackContext callbackContext) {
     try {
-      Callback<Boolean> cb = new Callback<Boolean>() {
+      Callback<String> cb = new Callback<String>() {
         @Override
-        public void onResponse(Boolean aBoolean) {
+        public void onResponse(String aString) {
           callbackContext.success();
         }
 
